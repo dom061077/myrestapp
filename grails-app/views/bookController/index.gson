@@ -1,0 +1,9 @@
+import com.example.Book
+
+model{
+    List[] books
+}
+
+json {
+    bookstag g.render(template:'book',collection:books, var:'book')
+}
