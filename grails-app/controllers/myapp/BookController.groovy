@@ -3,6 +3,7 @@ package myapp
 import grails.rest.RestfulController
 import com.example.Book
 import grails.plugin.springsecurity.annotation.Secured
+import grails.converters.JSON
 
 
 
@@ -12,6 +13,8 @@ class BookController extends RestfulController<Book> {
 		super(Book)
 	}
     def index() {
+		def list = ["HOLA","COMO","ESTAS"] //Book.list()
+		render list  as JSON
             // respond(message: "Hello World")
     }
 }
