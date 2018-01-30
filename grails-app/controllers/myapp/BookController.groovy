@@ -12,6 +12,6 @@ class BookController extends RestfulController<Book> {
 		super(Book)
 	}
     def index() {
-             respond(message: "Hello World")
+            // respond(message: "Hello World")
     }
 }
