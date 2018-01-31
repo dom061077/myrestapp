@@ -1,7 +1,7 @@
 package com.example
 
 class Remito {
-    //Date fecha
+    Date fecha
     String observacion
     static constraints = {
     }
