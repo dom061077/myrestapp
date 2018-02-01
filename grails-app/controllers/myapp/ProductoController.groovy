@@ -15,4 +15,9 @@ class ProductoController extends RestfulController<Producto> {
 		def list = Producto.list()
 		render list as JSON
 	}
+	
+	def traerProducto(int codigo){
+		Producto prodInstance = Producto.findByCodigo(codigo)
+		render prodInstance as JSON
+	}
 }
