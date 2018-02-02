@@ -34,3 +34,44 @@ grails.plugin.springsecurity.filterChain.chainMap = [
         [pattern: '/**',             filters: 'JOINED_FILTERS']
 ]
 
+
+     //grails.plugin.auditLog.verbose = true // verbosely log all changed values to db
+     //grails.plugin.auditLog.logIds = true  // log db-ids of associated objects.
+     //grails.plugin.auditLog.truncateLength = 1000
+     //grails.plugin.auditLog.cacheDisabled = true  // only for 1.x. Disable caching of AuditDomainClass.
+     //grails.plugin.auditLog.replacementPatterns = ["local.example.xyz.":""] // replace with empty string.
+     /*grails.plugin.auditLog.actorClosure = { request, session ->
+        // SpringSecurity Core 1.1.2
+        if (request.applicationContext.springSecurityService.principal instanceof groovy.lang.String){
+           return request.applicationContext.springSecurityService.principal
+        }
+        def username = request.applicationContext.springSecurityService.principal?.username
+        if (SpringSecurityUtils.isSwitched()){
+           username = SpringSecurityUtils.switchedUserOriginalUsername+" AS "+username
+        }
+        return username
+     }*/
+     //grails.plugin.auditLog.stampEnabled = true
+     //grails.plugin.auditLog.stampAlways = true
+
+
+
+
+// Added by the Audit-Logging plugin:
+//grails.plugin.auditLog.auditDomainClassName = 'com.example.Remito'
+
+
+
+// Added by the Audit-Logging plugin:
+grails.plugin.auditLog.auditDomainClassName = 'com.example.RemitoDetalleXXXX'
+
+
+
+// Added by the Audit-Logging plugin:
+grails.plugin.auditLog.auditDomainClassName = 'com.example.RemitoDetalle'
+
+
+
+// Added by the Audit-Logging plugin:
+grails.plugin.auditLog.auditDomainClassName = 'com.example.AuditDomain'
+

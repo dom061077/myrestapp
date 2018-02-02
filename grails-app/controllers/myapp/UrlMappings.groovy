@@ -14,5 +14,8 @@ class UrlMappings {
         "404"(view:'/notFound')
         "/api/book"(resources:"book")
 		"/api/producto" (resources:"producto")
+		"/api/consultaproducto" (resources:"consultaProducto")
+		post "/api/consultaproducto/search" (controller:"consultaProducto",action:"buscarProducto")
+		"/api/remito" (resources:"remito")
     }
 }

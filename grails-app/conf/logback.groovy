@@ -31,7 +31,7 @@ if (Environment.isDevelopmentMode() && targetDir != null) {
             pattern = "%level %logger - %msg%n"
         }
     }
-    logger("StackTrace", ERROR, ['FULL_STACKTRACE'], false)
+    logger("StackTrace", info, ['FULL_STACKTRACE'], false)
     logger 'grails.plugin.springsecurity.web.filter.DebugFilter', INFO, ['STDOUT'], false
 }
-root(ERROR, ['STDOUT'])
+root(info, ['STDOUT'])
