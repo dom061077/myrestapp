@@ -3,7 +3,10 @@ package myapp
 import grails.rest.RestfulController
 import com.example.Producto
 import grails.converters.JSON
+import grails.plugin.springsecurity.annotation.Secured
 
+
+@Secured("ROLE_USER")
 class ProductoController extends RestfulController<Producto> {
 
 	ProductoController(){
@@ -20,4 +23,7 @@ class ProductoController extends RestfulController<Producto> {
 		Producto prodInstance = Producto.findByCodigo(codigo)
 		render prodInstance as JSON
 	}
+    def save(){
+        
+    }    
 }

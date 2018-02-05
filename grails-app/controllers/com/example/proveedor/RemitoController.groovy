@@ -5,7 +5,9 @@ import grails.rest.RestfulController
 import com.example.Remito
 import com.example.RemitoDetalle
 import com.example.Producto
+import grails.plugin.springsecurity.annotation.Secured
 
+@Secured("ROLE_USER")
 class RemitoController extends RestfulController {
 	
 	RemitoController(){
@@ -21,7 +23,10 @@ class RemitoController extends RestfulController {
 		def remitoInstance = new Remito(fecha:new Date(),observacion:jsonParams.observacion)
 		def remitoDetInstance
 		def response=[:]
-		jsonParams.Detalle.each{ det ->
+                
+                log.info('Parametros enviados:'+jsonParams.fecha+'');
+                render response as JSON
+		/*jsonParams.Detalle.each{ det ->
 				remitoDetInstance = new RemitoDetalle()
 				remitoDetInstance.producto = Producto.load(det.productoId)
 				remitoDetInstance.cantidad = det.cantidad
@@ -36,6 +41,6 @@ class RemitoController extends RestfulController {
 			response.success = false
 			response.object = remitoInstance
 			render response as JSON
-		}
+		}*/
 	}
 }

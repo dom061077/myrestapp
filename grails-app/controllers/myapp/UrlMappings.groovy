@@ -15,7 +15,8 @@ class UrlMappings {
         "/api/book"(resources:"book")
 		"/api/producto" (resources:"producto")
 		"/api/consultaproducto" (resources:"consultaProducto")
-		post "/api/consultaproducto/search" (controller:"consultaProducto",action:"buscarProducto")
+		get "/api/consultaproducto/search/$id" (controller:"consultaProducto",action:"buscarProducto")
 		"/api/remito" (resources:"remito")
+        post "/api/remito" (controller:"remito",action:"save")
     }
 }

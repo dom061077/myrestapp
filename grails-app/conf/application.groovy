@@ -1,7 +1,7 @@
 
 
 // Added by the Spring Security Core plugin:
-grails.plugin.springsecurity.active = false
+grails.plugin.springsecurity.active = true
 grails.plugin.springsecurity.rest.token.validation.useBearerToken = false
 grails.plugin.springsecurity.rest.token.validation.headerName = 'X-Auth-Token'
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.example.auth.User'
@@ -59,16 +59,6 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 
 // Added by the Audit-Logging plugin:
 //grails.plugin.auditLog.auditDomainClassName = 'com.example.Remito'
-
-
-
-// Added by the Audit-Logging plugin:
-grails.plugin.auditLog.auditDomainClassName = 'com.example.RemitoDetalleXXXX'
-
-
-
-// Added by the Audit-Logging plugin:
-grails.plugin.auditLog.auditDomainClassName = 'com.example.RemitoDetalle'
 
 
 
