@@ -1,5 +1,4 @@
 
-
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.active = true
 grails.plugin.springsecurity.rest.token.validation.useBearerToken = false
@@ -40,17 +39,11 @@ grails.plugin.springsecurity.filterChain.chainMap = [
      //grails.plugin.auditLog.truncateLength = 1000
      //grails.plugin.auditLog.cacheDisabled = true  // only for 1.x. Disable caching of AuditDomainClass.
      //grails.plugin.auditLog.replacementPatterns = ["local.example.xyz.":""] // replace with empty string.
-     /*grails.plugin.auditLog.actorClosure = { request, session ->
-        // SpringSecurity Core 1.1.2
-        if (request.applicationContext.springSecurityService.principal instanceof groovy.lang.String){
-           return request.applicationContext.springSecurityService.principal
+     grails.plugin.auditLog.actorClosure = { request, session ->
+			session.user?.username	
         }
-        def username = request.applicationContext.springSecurityService.principal?.username
-        if (SpringSecurityUtils.isSwitched()){
-           username = SpringSecurityUtils.switchedUserOriginalUsername+" AS "+username
-        }
-        return username
-     }*/
+	 grails.plugin.auditLog.transactional = true	
+		
      //grails.plugin.auditLog.stampEnabled = true
      //grails.plugin.auditLog.stampAlways = true
 
@@ -64,4 +57,6 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 
 // Added by the Audit-Logging plugin:
 grails.plugin.auditLog.auditDomainClassName = 'com.example.AuditDomain'
+
+
 

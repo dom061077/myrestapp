@@ -24,23 +24,24 @@ class RemitoController extends RestfulController {
 		def remitoDetInstance
 		def response=[:]
                 
-                log.info('Parametros enviados:'+jsonParams.fecha+'');
-                render response as JSON
-		/*jsonParams.Detalle.each{ det ->
-				remitoDetInstance = new RemitoDetalle()
-				remitoDetInstance.producto = Producto.load(det.productoId)
-				remitoDetInstance.cantidad = det.cantidad
-				remitoInstance.addToDetalle(remitoDetInstance)
+		Remito.withTransaction{status->
+			jsonParams.Detalle.each{ det ->
+					remitoDetInstance = new RemitoDetalle()
+					remitoDetInstance.producto = Producto.load(det.productoId)
+					remitoDetInstance.cantidad = det.cantidad
+					remitoInstance.addToDetalle(remitoDetInstance)
+			}
+			if (remitoInstance.save()){
+				response.success = true
+				response.object = remitoInstance
+				render response as JSON
+			}else{
+				status.setRollbackOnly()
+				log.info("Errores: "+remitoInstance.errors.allErrors)
+				response.success = false
+				response.object = remitoInstance
+				render response as JSON
+			}
 		}
-		if (remitoInstance.save()){
-			response.success = true
-			response.object = remitoInstance
-			render response as JSON
-		}else{
-			log.info("Errores: "+remitoInstance.errors.allErrors)
-			response.success = false
-			response.object = remitoInstance
-			render response as JSON
-		}*/
 	}
 }
